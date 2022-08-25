@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
+  mount ActionCable.server => "/cable"
+
+
   resources :messages
-  resources :conversations
+  resources :conversations, except: [:index]
   resources :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -18,6 +21,13 @@ Rails.application.routes.draw do
   post "/me", to: "application#index"
 
   delete "/logout", to: "application#destroy"
+
+
+  post "/userconversations", to: "conversations#index"
+
+  post "/myprofile", to: "users#myprofile"
+
+  post "/newchat", to: "conversations#newchat"
 
 
 end

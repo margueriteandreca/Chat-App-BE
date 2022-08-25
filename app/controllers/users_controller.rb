@@ -8,6 +8,13 @@ class UsersController < ApplicationController
         render json: @users, status: :ok 
     end
 
+    def myprofile 
+        token = params[:token]
+        payload = decode(token)
+        user = User.find(payload['user_id'])
+        render json: user
+    end
+
 
     def create
         user = User.create(user_params)
@@ -35,6 +42,7 @@ class UsersController < ApplicationController
         
     end
 
+    #delete the account
     def destroy
         @user.destroy
     end

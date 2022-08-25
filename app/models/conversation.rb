@@ -5,4 +5,6 @@ class Conversation < ApplicationRecord
     def last_message 
         self.messages.last
     end
+
+    validates :id, uniqueness: true
 end
