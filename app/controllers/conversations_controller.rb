@@ -52,7 +52,10 @@ class ConversationsController < ApplicationController
     # end
 
     def destroy
-        @conversation.destroy
+        token = params[:token]
+        payload = decode(token)
+        user = User.find(payload['user_id'])
+        conversations = user.conversations.destroy_all
         head :no_content 
     end
 

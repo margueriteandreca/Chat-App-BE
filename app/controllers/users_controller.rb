@@ -29,10 +29,19 @@ class UsersController < ApplicationController
     end
 
     def update  
-        token = params[:token]
-        payload = decode(token)
-        user = User.find(payload['user_id'])
-        user.update(status_params)
+        # token = params[:token]
+        # payload = decode(token)
+        # user = User.find(payload['user_id'])
+        # user.update(status_params)
+
+        user = User.find(params[:id])
+        user.update!(status: params[:status])
+
+        # token = params[:token]
+        # payload = decode(token)
+        # user = User.find(payload['user_id'])
+        # user.update(status_params)
+
 
         if user
             render json: user
@@ -58,8 +67,8 @@ class UsersController < ApplicationController
         params.permit(:first_name, :last_name, :username, :password)
     end
 
-    def status_params 
-        params.permit(:status)
-    end
+    # def status_params 
+    #     params.permit(:status)
+    # end
 
 end

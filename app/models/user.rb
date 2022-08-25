@@ -8,7 +8,7 @@ class User < ApplicationRecord
     
     validates :username, presence: true, uniqueness: true 
     validates :username, uniqueness: { case_sensitive: false }
-    validates :password, presence: true
+    # validates :password, presence: true
     #use redux to ensure password is alphanumeric 
 
     has_secure_password 

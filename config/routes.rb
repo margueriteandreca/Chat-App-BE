@@ -29,5 +29,7 @@ Rails.application.routes.draw do
 
   # post "/newchat", to: "conversations#newchat"
 
+  post "/editstatus", to: "users#editstatus"
+
 
 end
