@@ -8,7 +8,7 @@
 
 
 
-u1 = User.create!(first_name: "Jimmy", last_name: "Yang", username: "itzjimmyO", password: "aylmao123", status: "Just a boy doing racist accents")
+u1 = User.create!(first_name: "Jimmy", last_name: "Yang", username: "itzjimmyO", password: "aylmao123", status: "Just kidding")
 u2 = User.create!(first_name: "Alan", last_name: "Xu", username: "kojisdad", password: "iloveamy69", status: "Shiba dad")
 u3 = User.create!(first_name: "Marguerite", last_name: "Andreca", username: "romaniangoddess", password: "sushi420", status: "Alan's mom")
 u4 = User.create!(first_name: "Chett", last_name: "Tiller", username: "brewchetta", password: "vegansushi123", status: "Leave me alone please")

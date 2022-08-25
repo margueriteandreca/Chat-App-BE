@@ -27,7 +27,7 @@ Rails.application.routes.draw do
 
   post "/myprofile", to: "users#myprofile"
 
-  post "/newchat", to: "conversations#newchat"
+  # post "/newchat", to: "conversations#newchat"
 
 
 end

@@ -7,12 +7,11 @@ class ConversationsController < ApplicationController
         token = params[:token]
         payload = decode(token)
         user = User.find(payload['user_id'])
-        conversations = user.conversations 
+        conversations = user.conversations.uniq
         render json: conversations, include: [:messages, :users], methods: [:last_message]
     end
 
-
-    def newchat
+    def create
         recipient = User.find(params[:recipient_id])
         token = params[:token]
         payload = decode(token)
