@@ -51,6 +51,13 @@ class UsersController < ApplicationController
         
     end
 
+
+    # def update_avatar
+    #     user = User.find(params[:id])
+    #     user.update_attribute(:avatar, params[:avatar])
+    #     render json: user 
+    # end
+
     #delete the account
     def destroy
         @user.destroy
